@@ -137,7 +137,7 @@ export default function Home() {
                   <path d="M7 10l2.5 2.5 4-4" stroke="#ff2d78" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <div><div className="hcard-num">0</div><div className="hcard-label">Manual follow-ups after automation</div></div>
+              <div><div className="hcard-num">-90%</div><div className="hcard-label">Manual follow-ups after automation</div></div>
             </div>
             <div className="hcard">
               <div className="hcard-icon">
