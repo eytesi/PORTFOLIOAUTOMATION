@@ -11,11 +11,11 @@ const caseStudies = [
       "Worked as part of the I-9 team stakeholder group to support the automation of employee communications for Section 1 and Section 2 completion. Provided process insights, system knowledge, and workflow logic to help design automated email flows replacing manual follow-ups.",
   },
   {
-    title: "Re-Verification Reminder Automation",
-    impact: "Reduced manual tracking and improved compliance visibility",
-    description:
-      "Built a self-initiated automation based on re-verification reports from Perfect Compliance. Transformed manual tracking into automated email reminders for employees with expiring work authorization documents, improving efficiency and reducing operational load.",
-  },
+  title: "Re-Verification Reminder Automation",
+  impact: "Saved ~10 hours per month through automated follow-ups",
+  description:
+    "Built a self-initiated reminder flow based on weekly refreshed re-verification reports from Perfect Compliance. It automatically sends weekly email reminders to employees with 50 days or less before their work authorization documents expire, replacing a repetitive manual process.",
+},
   {
     title: "Operational Alert Systems (Internal Tools)",
     impact: "Improved team awareness across multi-location operations",
@@ -194,11 +194,118 @@ export default function Home() {
               </div>
             </div>
             <div className={`cdetail${openCase==='1'?' visible':''}`}>
-              <div className="d3col">
-                <div><div className="dlabel">Problem</div><div className="dtext">Expiring work authorizations weren&apos;t followed up on. Fully manual, fully reactive — compliance risk with every missed renewal.</div></div>
-                <div><div className="dlabel">My role</div><div className="dtext">Designed and built an automated email system monitoring expiry dates and triggering outreach. Fully owned end to end.</div></div>
-                <div><div className="dlabel">Outcome</div><div className="dtext">Zero manual follow-ups needed. Every affected employee gets consistent, timely communication before expiry.</div></div>
-              </div>
+  <div className="d3col">
+    <div>
+      <div className="dlabel">Problem</div>
+      <div className="dtext">
+        Re-verifications required manually checking expiring work authorization
+        documents in Perfect Compliance and sending reminder emails to employees
+        at least every 7 days. The process was repetitive, time-consuming, and
+        easy to delay during busy periods.
+      </div>
+    </div>
+
+    <div>
+      <div className="dlabel">My role</div>
+      <div className="dtext">
+        I owned the re-verification process and turned a manual workflow into an
+        automated reminder system. I used the weekly re-verification report as
+        the source table and built a flow that sends reminder emails
+        automatically once documents are within 50 days of expiration.
+      </div>
+    </div>
+
+    <div>
+      <div className="dlabel">Outcome</div>
+      <div className="dtext">
+        The process now runs through a weekly refreshed table and sends
+        recurring reminders automatically, reducing manual effort by at least
+        10 hours per month while improving consistency and visibility.
+      </div>
+    </div>
+  </div>
+
+  <div className="flow">
+    <div className="fs">
+      <div className="fd"></div>
+      <div className="fl">Weekly<br />report</div>
+    </div>
+    <div className="fa">→</div>
+
+    <div className="fs">
+      <div className="fd on"></div>
+      <div className="fl on">Table<br />refreshed</div>
+    </div>
+    <div className="fa">→</div>
+
+    <div className="fs">
+      <div className="fd on"></div>
+      <div className="fl on">50-day<br />filter</div>
+    </div>
+    <div className="fa">→</div>
+
+    <div className="fs">
+      <div className="fd on"></div>
+      <div className="fl on">Weekly email<br />sent</div>
+    </div>
+    <div className="fa">→</div>
+
+    <div className="fs">
+      <div className="fd"></div>
+      <div className="fl">Follow-up<br />tracked</div>
+    </div>
+  </div>
+
+  <div className="stats">
+    <div className="scard">
+      <div className="sgfx">
+        <svg width="56" height="36" viewBox="0 0 56 36">
+          <text
+            x="28"
+            y="24"
+            textAnchor="middle"
+            fontFamily="Figtree"
+            fontSize="16"
+            fontWeight="900"
+            fill="#ff2d78"
+          >
+            10h+
+          </text>
+        </svg>
+      </div>
+      <div className="slabel">Saved monthly</div>
+    </div>
+
+    <div className="scard">
+      <div className="sgfx">
+        <svg width="56" height="36" viewBox="0 0 56 36">
+          <path
+            d="M6 28 L18 22 L28 18 L40 10 L50 6"
+            stroke="#ff2d78"
+            strokeWidth="2"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <circle cx="50" cy="6" r="2.5" fill="#ff2d78" />
+        </svg>
+      </div>
+      <div className="slabel">Proactive follow-up</div>
+    </div>
+
+    <div className="scard">
+      <div className="sgfx">
+        <svg width="56" height="36" viewBox="0 0 56 36">
+          <rect x="4" y="22" width="8" height="12" rx="2" fill="#ff2d78" opacity="0.2" />
+          <rect x="16" y="16" width="8" height="18" rx="2" fill="#ff2d78" opacity="0.4" />
+          <rect x="28" y="10" width="8" height="24" rx="2" fill="#ff2d78" opacity="0.6" />
+          <rect x="40" y="4" width="8" height="30" rx="2" fill="#ff2d78" opacity="0.9" />
+        </svg>
+      </div>
+      <div className="slabel">Consistency ↑</div>
+    </div>
+  </div>
+</div>
               <div className="flow">
                 <div className="fs"><div className="fd"></div><div className="fl">Document<br/>DB</div></div><div className="fa">→</div>
                 <div className="fs"><div className="fd on"></div><div className="fl on">Expiry<br/>monitor</div></div><div className="fa">→</div>
@@ -239,32 +346,88 @@ export default function Home() {
               </div>
             </div>
 
-            <div onClick={()=>toggleC('3')}>
-              <div className={`crow${openCase==='3'?' open':''}`}><div className="cn">04</div>
-                <div><div className="ctitle">Onboarding &amp; Offboarding Automation — Argentina</div><div className="csub">Proposed lifecycle pipeline for local ops</div>
-                  <div className="cpills"><span className="cpill hot">In Progress</span><span className="cpill">Process Design</span><span className="cpill">Argentina Ops</span></div>
-                </div><div className="carrow">›</div>
-              </div>
-            </div>
-            <div className={`cdetail${openCase==='3'?' visible':''}`}>
-              <div className="d3col">
-                <div><div className="dlabel">Opportunity</div><div className="dtext">Argentina ops lack a standardized automated workflow for alta and baja. Manual coordination, compliance gaps, no audit trail.</div></div>
-                <div><div className="dlabel">Proposed approach</div><div className="dtext">End-to-end pipeline triggered by HR events, auto-routed to stakeholders, with compliance checkpoints built in.</div></div>
-                <div><div className="dlabel">Status</div><div className="dtext">Concept developed with former manager. Ready to design and implement with the right mandate.</div></div>
-              </div>
-              <div className="flow">
-                <div className="fs"><div className="fd on"></div><div className="fl on">HR event<br/>trigger</div></div><div className="fa">→</div>
-                <div className="fs"><div className="fd on"></div><div className="fl on">Auto<br/>routing</div></div><div className="fa">→</div>
-                <div className="fs"><div className="fd on"></div><div className="fl on">Tasks<br/>assigned</div></div><div className="fa">→</div>
-                <div className="fs"><div className="fd on"></div><div className="fl on">Compliance<br/>check</div></div><div className="fa">→</div>
-                <div className="fs"><div className="fd on"></div><div className="fl on">Audit<br/>closed</div></div>
-              </div>
-              <div className="stats">
-                <div className="scard"><div className="sgfx"><svg width="56" height="36" viewBox="0 0 56 36"><text x="28" y="26" textAnchor="middle" fontFamily="Figtree" fontSize="22" fontWeight="900" fill="#ff2d78">↓</text></svg></div><div className="slabel">Time-to-productivity</div></div>
-                <div className="scard"><div className="sgfx"><svg width="56" height="36" viewBox="0 0 56 36"><circle cx="28" cy="18" r="13" fill="rgba(255,45,120,0.08)" stroke="#ff2d78" strokeWidth="1.5"/><path d="M20 18l5.5 5.5 10-10" stroke="#ff2d78" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></div><div className="slabel">Full audit trail</div></div>
-                <div className="scard"><div className="sgfx"><svg width="56" height="36" viewBox="0 0 56 36"><rect x="6" y="22" width="8" height="12" rx="2" fill="#ff2d78" opacity="0.3"/><rect x="18" y="14" width="8" height="20" rx="2" fill="#ff2d78" opacity="0.5"/><rect x="30" y="8" width="8" height="26" rx="2" fill="#ff2d78" opacity="0.7"/><rect x="42" y="3" width="8" height="31" rx="2" fill="#ff2d78" opacity="0.9"/></svg></div><div className="slabel">Consistency ↑</div></div>
-              </div>
-            </div>
+<div onClick={()=>toggleC('3')}>
+  <div className={`crow${openCase==='3'?' open':''}`}><div className="cn">04</div>
+    <div>
+      <div className="ctitle">Operational Reminder Systems</div>
+      <div className="csub">Lightweight automations for payroll and team coordination</div>
+      <div className="cpills">
+        <span className="cpill hot">Internal Automation</span>
+        <span className="cpill">Ops Efficiency</span>
+        <span className="cpill">Team Coordination</span>
+      </div>
+    </div><div className="carrow">›</div>
+  </div>
+</div>
+<div className={`cdetail${openCase==='3'?' visible':''}`}>
+  <div className="d3col">
+    <div>
+      <div className="dlabel">Problem</div>
+      <div className="dtext">
+        Teams relied on manual reminders for recurring operational deadlines and
+        events, which made it easier to miss key actions during busy periods.
+      </div>
+    </div>
+
+    <div>
+      <div className="dlabel">My role</div>
+      <div className="dtext">
+        Built lightweight automated reminders for operational needs such as
+        payroll deadlines and internal team coordination, reducing the need for
+        repetitive manual follow-up.
+      </div>
+    </div>
+
+    <div>
+      <div className="dlabel">Outcome</div>
+      <div className="dtext">
+        Improved visibility of recurring deadlines, supported team alignment,
+        and made small but high-friction operational tasks more consistent.
+      </div>
+    </div>
+  </div>
+
+  <div className="flow">
+    <div className="fs"><div className="fd"></div><div className="fl">Recurring<br/>event</div></div><div className="fa">→</div>
+    <div className="fs"><div className="fd on"></div><div className="fl on">Reminder<br/>logic</div></div><div className="fa">→</div>
+    <div className="fs"><div className="fd on"></div><div className="fl on">Alert<br/>sent</div></div><div className="fa">→</div>
+    <div className="fs"><div className="fd"></div><div className="fl">Team<br/>action</div></div>
+  </div>
+
+  <div className="stats">
+    <div className="scard">
+      <div className="sgfx">
+        <svg width="56" height="36" viewBox="0 0 56 36">
+          <path d="M6 28 L18 20 L30 22 L42 12 L50 8" stroke="#ff2d78" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="50" cy="8" r="2.5" fill="#ff2d78"/>
+        </svg>
+      </div>
+      <div className="slabel">Visibility ↑</div>
+    </div>
+
+    <div className="scard">
+      <div className="sgfx">
+        <svg width="56" height="36" viewBox="0 0 56 36">
+          <circle cx="28" cy="18" r="13" fill="rgba(255,45,120,0.08)" stroke="#ff2d78" strokeWidth="1.5"/>
+          <path d="M20 18l5.5 5.5 10-10" stroke="#ff2d78" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      <div className="slabel">Consistency</div>
+    </div>
+
+    <div className="scard">
+      <div className="sgfx">
+        <svg width="56" height="36" viewBox="0 0 56 36">
+          <rect x="6" y="22" width="8" height="12" rx="2" fill="#ff2d78" opacity="0.3"/>
+          <rect x="18" y="14" width="8" height="20" rx="2" fill="#ff2d78" opacity="0.5"/>
+          <rect x="30" y="8" width="8" height="26" rx="2" fill="#ff2d78" opacity="0.7"/>
+          <rect x="42" y="3" width="8" height="31" rx="2" fill="#ff2d78" opacity="0.9"/>
+        </svg>
+      </div>
+      <div className="slabel">Manual effort ↓</div>
+    </div>
+  </div>
+</div>
 
           </div>
         </div>
@@ -295,8 +458,7 @@ export default function Home() {
           <div className="flogo">IV<span>.</span></div>
           <div className="fnote">ivo.vieytes@assurant.com · Buenos Aires</div>
         </div>
-      </div>
-
+<div>
       {/* WORK SECTION */}
       <div className={`section${activeSection==='work'?' visible':''}`}>
         <div className="work-wrap">
@@ -355,6 +517,6 @@ export default function Home() {
         <div className="easter" title="☽ ✦ ☾">· · ✦ · ·</div>
         <div className="footer"><div className="flogo">IV<span>.</span></div><div className="fnote">ivo.vieytes@assurant.com · Buenos Aires</div></div>
       </div>
-    </>
+    </div>
   );
-}
+
