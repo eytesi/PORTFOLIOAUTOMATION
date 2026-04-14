@@ -306,20 +306,6 @@ export default function Home() {
     </div>
   </div>
 </div>
-              <div className="flow">
-                <div className="fs"><div className="fd"></div><div className="fl">Document<br/>DB</div></div><div className="fa">→</div>
-                <div className="fs"><div className="fd on"></div><div className="fl on">Expiry<br/>monitor</div></div><div className="fa">→</div>
-                <div className="fs"><div className="fd on"></div><div className="fl on">Email<br/>triggered</div></div><div className="fa">→</div>
-                <div className="fs"><div className="fd"></div><div className="fl">Employee<br/>renewal</div></div><div className="fa">→</div>
-                <div className="fs"><div className="fd"></div><div className="fl">Record<br/>updated</div></div>
-              </div>
-              <div className="stats">
-                <div className="scard"><div className="sgfx"><svg width="56" height="36" viewBox="0 0 56 36"><text x="28" y="26" textAnchor="middle" fontFamily="Figtree" fontSize="26" fontWeight="900" fill="#ff2d78">0</text></svg></div><div className="slabel">Manual follow-ups</div></div>
-                <div className="scard"><div className="sgfx"><svg width="56" height="36" viewBox="0 0 56 36"><path d="M4 32 Q14 10 28 16 Q40 22 52 4" stroke="#ff2d78" strokeWidth="2" fill="none" strokeLinecap="round"/><circle cx="52" cy="4" r="2.5" fill="#ff2d78"/><path d="M4 32 Q14 10 28 16 Q40 22 52 4 L52 36 L4 36Z" fill="rgba(255,45,120,0.06)"/></svg></div><div className="slabel">Proactive outreach</div></div>
-                <div className="scard"><div className="sgfx"><svg width="56" height="36" viewBox="0 0 56 36"><rect x="2" y="4" width="8" height="30" rx="2" fill="#ff2d78" opacity="0.8"/><rect x="14" y="12" width="8" height="22" rx="2" fill="#ff2d78" opacity="0.5"/><rect x="26" y="20" width="8" height="14" rx="2" fill="#ff2d78" opacity="0.3"/><rect x="38" y="27" width="8" height="7" rx="2" fill="#ff2d78" opacity="0.15"/></svg></div><div className="slabel">Risk exposure ↓</div></div>
-              </div>
-            </div>
-
             <div onClick={()=>toggleC('2')}>
               <div className={`crow${openCase==='2'?' open':''}`}><div className="cn">03</div>
                 <div><div className="ctitle">Holiday Staffing Alert System</div><div className="csub">Proactive multi-location coverage reminders</div>
