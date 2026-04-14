@@ -517,6 +517,7 @@ export default function Home() {
         <div className="easter" title="☽ ✦ ☾">· · ✦ · ·</div>
         <div className="footer"><div className="flogo">IV<span>.</span></div><div className="fnote">ivo.vieytes@assurant.com · Buenos Aires</div></div>
       </div>
-    </div>
+      </div> {/* ABOUT SECTION */}
+    </>
   );
 }
